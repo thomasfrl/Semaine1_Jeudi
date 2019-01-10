@@ -1,5 +1,5 @@
 # Groupe 
-- **Thomas Feral**
+- **Thomas Feral** **Thomasfrl**
 - **Jean Tirard**
 
 # 00_hello.rb
