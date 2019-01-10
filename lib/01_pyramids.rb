@@ -45,9 +45,14 @@ end
 
 
 def entire_pyramid
-	puts "Salut, bienvenue dans ma super pyramide! Choisit un nombre entre 1 et 25!"
+	puts "Salut, bienvenue dans ma super pyramide avec deux cotés! Choisit un nombre entre 1 et 25!"
 	print ">"
 	user_number = Integer(gets.chomp)
+	while user_number>25 || user_number < 0
+		puts "J'ai dis un nombre ENTRE 1 et 25 !!!!!!"
+		print ">"
+		user_number = Integer(gets.chomp)
+	end
 	user_number.times do |i|
 		creation_ligne(2*i+1,user_number)
 	end	
@@ -57,20 +62,26 @@ end
 
 
 def losange_pyramid
-	puts "Salut, bienvenue dans ma super pyramide! Choisit un nombre IMPAIRE entre 1 et 25!"
+	puts "Salut, bienvenue dans ma super pyramide en losange! Choisit un nombre IMPAIRE entre 1 et 25!"
 	print ">"
 	user_number = Integer(gets.chomp)
+	while user_number.even? || user_number>25 || user_number < 0
+		puts "J'ai dis un nombre IMPAIRE ENTRE 1 et 25 !!!!!!"
+		print ">"
+		user_number = Integer(gets.chomp)
+	end
 	((user_number+1)/2).times do |i|
 		creation_ligne(2*i+1,(user_number+1)/2)
+	end	
 
-	end		
     (user_number/2).times do |i|
-		creation_ligne((user_number/2-i+1)*2-3,user_number/2+1)
+		creation_ligne(user_number-2*i-2,user_number/2+1)
 	end
 
 
 end
 
+entire_pyramid
 losange_pyramid
 
 
